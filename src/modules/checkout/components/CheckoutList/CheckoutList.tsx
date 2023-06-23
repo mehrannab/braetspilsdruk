@@ -27,8 +27,7 @@ export function CheckoutList() {
       direction={"column"}
       justifyContent={"center"}
       alignContent={"center"}
-      sx={{ marginTop: 20 }}
-    >
+      sx={{ marginTop: 20 }}>
       <List
         sx={{ width: "100%", maxWidth: 500, bgcolor: "#FF6F3A" }}
         subheader={
@@ -37,15 +36,13 @@ export function CheckoutList() {
               Din indkøbskurv
             </ListSubheader>
           </>
-        }
-      >
+        }>
         {ordres.map((item) => (
           <>
             <ListItem key={item.id}>
               <ListItemText
                 primary={item.name}
-                secondary={item.price + " kr"}
-              ></ListItemText>
+                secondary={item.price + " kr"}></ListItemText>
               <Button color="success" onClick={() => removeFromCart(item)}>
                 Slet
               </Button>
@@ -62,8 +59,7 @@ export function CheckoutList() {
             variant="contained"
             color="success"
             disabled={totalPrice == 0}
-            onClick={handleRouting("/checkout/payment")}
-          >
+            onClick={handleRouting("/checkout/payment")}>
             Betal
           </Button>
         </ListItem>
