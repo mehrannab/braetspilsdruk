@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Dummy 1",
+    "description": "dette er en test",
+    "price": 10,
+    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp"
+  },
+  {
+    "id": 2,
+    "name": "dede",
+    "description": "dedweefw",
+    "price": 422,
+    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp"
+  },
+  {
+    "id": 3,
+    "name": "dedewdwede",
+    "description": "dfw",
+    "price": 42288,
+    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp"
+  },
+  {
+    "id": 4,
+    "name": "dyyhyy",
+    "description": "dfffffw",
+    "price": 335,
+    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp"
+  }
+]

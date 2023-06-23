@@ -1,0 +1,1 @@
+export { PremadeContent } from "./PremadeContent";
