@@ -44,19 +44,17 @@ export function PremadeCard() {
         spacing={12}
         justifyContent={"center"}
         alignContent={"flex-end"}
-        sx={{ marginTop: 2 }}
-      >
+        sx={{ marginTop: 2 }}>
         <Grid item xs={12} textAlign={"center"}>
           <Typography variant="h5">
-            købe brætspils her det billigt yallah kom ik tænk så meget
+            købe brætspils her det billigt kom kom
           </Typography>
         </Grid>
         {faerdigeBraetspil.map((item: Item) => (
           <Grid item xs={3} key={item.id}>
             <Card
               sx={{ maxWidth: 350, borderColor: "black" }}
-              variant="outlined"
-            >
+              variant="outlined">
               <Tooltip title="Forstør billede" placement="top">
                 <Box
                   component="img"
@@ -89,8 +87,7 @@ export function PremadeCard() {
           key={item.id}
           open={open}
           onClose={handleClose}
-          closeAfterTransition
-        >
+          closeAfterTransition>
           <Fade in={open} timeout={500}>
             <Box
               component="img"
