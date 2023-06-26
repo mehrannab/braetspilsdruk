@@ -47,7 +47,7 @@ export function PremadeCard() {
         sx={{ marginTop: 2 }}>
         <Grid item xs={12} textAlign={"center"}>
           <Typography variant="h5">
-            købe brætspils her det billigt kom kom
+            købe brætspils her det billigt kom kom kom
           </Typography>
         </Grid>
         {faerdigeBraetspil.map((item: Item) => (
