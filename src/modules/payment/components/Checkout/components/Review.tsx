@@ -5,7 +5,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { IFormInputShipping } from "../Checkout";
 
@@ -34,16 +34,20 @@ export default function Review() {
           </ListItem>
         ))}
         <ListItem sx={{ py: 1, px: 0 }}>
+          <ListItemText primary="Levering" />
+          <Typography variant="body2">Sendes med GLS (40 kr)</Typography>
+        </ListItem>
+        <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            {totalPrice + " kr"}
+            {totalPrice + 40 + " kr"}
           </Typography>
         </ListItem>
       </List>
       <Grid container>
         <Grid item xs={4}>
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Levering
+            Leveringsinformation
           </Typography>
           <Typography gutterBottom>
             {formData.firstName} {formData.lastName}

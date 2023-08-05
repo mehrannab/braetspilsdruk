@@ -10,7 +10,7 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import faerdigeBraetspil from "../../../../data/faerdigeBraetspil.json";
 import CartContext, { Item } from "@/contexts/CartContext";
 
@@ -28,6 +28,10 @@ export function PremadeCard() {
   const [image, setImage] = useState("false");
   const { addToCart } = useContext(CartContext);
 
+  useEffect(() => {
+    console.log(faerdigeBraetspil);
+  });
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -39,43 +43,44 @@ export function PremadeCard() {
 
   return (
     <Box>
-      <Grid
-        container
-        spacing={12}
-        justifyContent={"center"}
-        alignContent={"flex-end"}
-        sx={{ marginTop: 2 }}>
+      <Grid container spacing={10} sx={{ marginTop: 2 }}>
         <Grid item xs={12} textAlign={"center"}>
-          <Typography variant="h5">
-            købe brætspils her det billigt kom kom kom
+          <Typography variant="h4">
+            Her ses de færdiglavede brætspil som er på lager for nu
           </Typography>
         </Grid>
         {faerdigeBraetspil.map((item: Item) => (
-          <Grid item xs={3} key={item.id}>
+          <Grid item md={6} key={item.id}>
             <Card
-              sx={{ maxWidth: 350, borderColor: "black" }}
+              sx={{
+                borderColor: "black",
+                marginBottom: 2,
+              }}
               variant="outlined">
-              <Tooltip title="Forstør billede" placement="top">
+              <Tooltip title="Klik for at forstørre billede" placement="top">
                 <Box
                   component="img"
-                  sx={{
-                    height: 230,
-                    width: 350,
-                    maxHeight: { xs: 233, md: 167 },
-                    maxWidth: { xs: 350, md: 250 },
-                  }}
                   alt="The house from the offer."
                   src={item.imgUrl}
+                  style={{ width: "100%", height: "100%" }}
                   onClick={(e) => handleImage(item.imgUrl)}
                 />
               </Tooltip>
               <CardContent>
-                <Typography>{item.name}</Typography>
-                <Typography>{item.description}</Typography>
-                <Typography>Pris: {item.price}</Typography>
-                <Button onClick={() => addToCart(item)} variant="contained">
-                  Tilføj til kurven
-                </Button>
+                <Grid container spacing={3}>
+                  <Grid item>
+                    <Typography variant="h4">{item.name}</Typography>
+                    <Typography variant="caption" fontSize={14}>
+                      {item.description}
+                    </Typography>
+                    <Typography variant="h6">Pris: {item.price} kr</Typography>
+                  </Grid>
+                  <Grid item>
+                    <Button onClick={() => addToCart(item)} variant="contained">
+                      Tilføj til kurven
+                    </Button>
+                  </Grid>
+                </Grid>
               </CardContent>
             </Card>
           </Grid>
@@ -91,10 +96,14 @@ export function PremadeCard() {
           <Fade in={open} timeout={500}>
             <Box
               component="img"
-              maxHeight={"95%"}
-              maxWidth={"95%"}
+              maxHeight={"50%"}
+              maxWidth={"50%"}
               alt="The house from the offer."
               src={item.imgUrl}
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
             />
           </Fade>
         </ModalImage>

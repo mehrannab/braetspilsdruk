@@ -1,30 +1,918 @@
 [
   {
-    "id": 1,
-    "name": "Dummy 1",
-    "description": "dette er en test",
-    "price": 10,
-    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp"
+    "id": "1",
+    "name": "Sommerdrukspil",
+    "description": "Dette drukspil er til jer som vil blive lidt sommertipsy",
+    "price": 50,
+    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp",
+    "questions": [
+      {
+        "id": "1",
+        "fieldNumber": 1,
+        "content": "højeste drikkker"
+      },
+      {
+        "id": "2",
+        "fieldNumber": 2,
+        "content": "laveste drikkker"
+      },
+      {
+        "id": "3",
+        "fieldNumber": 3,
+        "content": "langsommeste drikkker"
+      },
+      {
+        "id": "4",
+        "fieldNumber": 4,
+        "content": "frefe drikker"
+      },
+      {
+        "id": "5",
+        "fieldNumber": 5,
+        "content": "ggg drikkker"
+      },
+      {
+        "id": "6",
+        "fieldNumber": 6,
+        "content": "drikker"
+      },
+      {
+        "id": "7",
+        "fieldNumber": 7,
+        "content": "du drikker"
+      },
+      {
+        "id": "8",
+        "fieldNumber": 8,
+        "content": "frfrfrff"
+      },
+      {
+        "id": "9",
+        "fieldNumber": 9,
+        "content": "fgrgtgtt"
+      },
+      {
+        "id": "10",
+        "fieldNumber": 10,
+        "content": "ddefggggg"
+      },
+      {
+        "id": "11",
+        "fieldNumber": 11,
+        "content": "ooooooo"
+      },
+      {
+        "id": "12",
+        "fieldNumber": 12,
+        "content": "komnoko"
+      },
+      {
+        "id": "13",
+        "fieldNumber": 13,
+        "content": "bbbb"
+      },
+      {
+        "id": "14",
+        "fieldNumber": 14,
+        "content": "qwqqqq"
+      },
+      {
+        "id": "15",
+        "fieldNumber": 15,
+        "content": "mmmmm"
+      },
+      {
+        "id": "16",
+        "fieldNumber": 16,
+        "content": "bedste drikker"
+      },
+      {
+        "id": "17",
+        "fieldNumber": 17,
+        "content": "kldfre"
+      },
+      {
+        "id": "18",
+        "fieldNumber": 18,
+        "content": "mmmmm"
+      },
+      {
+        "id": "19",
+        "fieldNumber": 19,
+        "content": "mmmfefewe"
+      },
+      {
+        "id": "20",
+        "fieldNumber": 20,
+        "content": "okcdsdsd"
+      },
+      {
+        "id": "21",
+        "fieldNumber": 21,
+        "content": "bbbbbbbbb"
+      },
+      {
+        "id": "22",
+        "fieldNumber": 22,
+        "content": "jonglere 3 gange med bold, hvis taber, så drik"
+      },
+      {
+        "id": "23",
+        "fieldNumber": 23,
+        "content": "dedede"
+      },
+      {
+        "id": "24",
+        "fieldNumber": 24,
+        "content": "rererere"
+      },
+      {
+        "id": "25",
+        "fieldNumber": 25,
+        "content": "qqqqqqq"
+      },
+      {
+        "id": "26",
+        "fieldNumber": 26,
+        "content": "dans eller drik"
+      },
+      {
+        "id": "27",
+        "fieldNumber": 27,
+        "content": "degfrgtgtgtgt"
+      },
+      {
+        "id": "28",
+        "fieldNumber": 28,
+        "content": "mmmmmvffffff"
+      },
+      {
+        "id": "29",
+        "fieldNumber": 29,
+        "content": "kortest håret drikker"
+      },
+      {
+        "id": "30",
+        "fieldNumber": 30,
+        "content": "ddddeerqqqq"
+      },
+      {
+        "id": "31",
+        "fieldNumber": 31,
+        "content": "mmmmmmllææææææ"
+      },
+      {
+        "id": "32",
+        "fieldNumber": 32,
+        "content": "ææællllll"
+      },
+      {
+        "id": "33",
+        "fieldNumber": 33,
+        "content": "bbbbb"
+      },
+      {
+        "id": "34",
+        "fieldNumber": 34,
+        "content": "bbbnhnhhh"
+      },
+      {
+        "id": "35",
+        "fieldNumber": 35,
+        "content": "blegste drikker"
+      },
+      {
+        "id": "36",
+        "fieldNumber": 36,
+        "content": "mørkeste drikker"
+      },
+      {
+        "id": "37",
+        "fieldNumber": 37,
+        "content": "hurtigste drikker"
+      },
+      {
+        "id": "38",
+        "fieldNumber": 38,
+        "content": "beeeeqqq"
+      },
+      {
+        "id": "39",
+        "fieldNumber": 39,
+        "content": "lokomomo"
+      },
+      {
+        "id": "40",
+        "fieldNumber": 40,
+        "content": "gtgte"
+      },
+      {
+        "id": "41",
+        "fieldNumber": 41,
+        "content": "qqqqwwwwww"
+      },
+      {
+        "id": "42",
+        "fieldNumber": 42,
+        "content": "nunununu"
+      },
+      {
+        "id": "43",
+        "fieldNumber": 43,
+        "content": "åååååå"
+      },
+      {
+        "id": "44",
+        "fieldNumber": 44,
+        "content": "ttttt"
+      }
+    ]
   },
   {
-    "id": 2,
-    "name": "dede",
-    "description": "dedweefw",
-    "price": 422,
-    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp"
+    "id": "2",
+    "name": "Studenterdrukspil",
+    "description": "Dette er til jer som lige er blevet studenter og skal gå amok",
+    "price": 60,
+    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp",
+    "questions": [
+      {
+        "id": "1",
+        "fieldNumber": 1,
+        "content": "højeste drikkker"
+      },
+      {
+        "id": "2",
+        "fieldNumber": 2,
+        "content": "laveste drikkker"
+      },
+      {
+        "id": "3",
+        "fieldNumber": 3,
+        "content": "langsommeste drikkker"
+      },
+      {
+        "id": "4",
+        "fieldNumber": 4,
+        "content": "frefe drikker"
+      },
+      {
+        "id": "5",
+        "fieldNumber": 5,
+        "content": "ggg drikkker"
+      },
+      {
+        "id": "6",
+        "fieldNumber": 6,
+        "content": "drikker"
+      },
+      {
+        "id": "7",
+        "fieldNumber": 7,
+        "content": "du drikker"
+      },
+      {
+        "id": "8",
+        "fieldNumber": 8,
+        "content": "frfrfrff"
+      },
+      {
+        "id": "9",
+        "fieldNumber": 9,
+        "content": "fgrgtgtt"
+      },
+      {
+        "id": "10",
+        "fieldNumber": 10,
+        "content": "ddefggggg"
+      },
+      {
+        "id": "11",
+        "fieldNumber": 11,
+        "content": "ooooooo"
+      },
+      {
+        "id": "12",
+        "fieldNumber": 12,
+        "content": "komnoko"
+      },
+      {
+        "id": "13",
+        "fieldNumber": 13,
+        "content": "bbbb"
+      },
+      {
+        "id": "14",
+        "fieldNumber": 14,
+        "content": "qwqqqq"
+      },
+      {
+        "id": "15",
+        "fieldNumber": 15,
+        "content": "mmmmm"
+      },
+      {
+        "id": "16",
+        "fieldNumber": 16,
+        "content": "bedste drikker"
+      },
+      {
+        "id": "17",
+        "fieldNumber": 17,
+        "content": "kldfre"
+      },
+      {
+        "id": "18",
+        "fieldNumber": 18,
+        "content": "mmmmm"
+      },
+      {
+        "id": "19",
+        "fieldNumber": 19,
+        "content": "mmmfefewe"
+      },
+      {
+        "id": "20",
+        "fieldNumber": 20,
+        "content": "okcdsdsd"
+      },
+      {
+        "id": "21",
+        "fieldNumber": 21,
+        "content": "bbbbbbbbb"
+      },
+      {
+        "id": "22",
+        "fieldNumber": 22,
+        "content": "jonglere 3 gange med bold, hvis taber, så drik"
+      },
+      {
+        "id": "23",
+        "fieldNumber": 23,
+        "content": "dedede"
+      },
+      {
+        "id": "24",
+        "fieldNumber": 24,
+        "content": "rererere"
+      },
+      {
+        "id": "25",
+        "fieldNumber": 25,
+        "content": "qqqqqqq"
+      },
+      {
+        "id": "26",
+        "fieldNumber": 26,
+        "content": "dans eller drik"
+      },
+      {
+        "id": "27",
+        "fieldNumber": 27,
+        "content": "degfrgtgtgtgt"
+      },
+      {
+        "id": "28",
+        "fieldNumber": 28,
+        "content": "mmmmmvffffff"
+      },
+      {
+        "id": "29",
+        "fieldNumber": 29,
+        "content": "kortest håret drikker"
+      },
+      {
+        "id": "30",
+        "fieldNumber": 30,
+        "content": "ddddeerqqqq"
+      },
+      {
+        "id": "31",
+        "fieldNumber": 31,
+        "content": "mmmmmmllææææææ"
+      },
+      {
+        "id": "32",
+        "fieldNumber": 32,
+        "content": "ææællllll"
+      },
+      {
+        "id": "33",
+        "fieldNumber": 33,
+        "content": "bbbbb"
+      },
+      {
+        "id": "34",
+        "fieldNumber": 34,
+        "content": "bbbnhnhhh"
+      },
+      {
+        "id": "35",
+        "fieldNumber": 35,
+        "content": "blegste drikker"
+      },
+      {
+        "id": "36",
+        "fieldNumber": 36,
+        "content": "mørkeste drikker"
+      },
+      {
+        "id": "37",
+        "fieldNumber": 37,
+        "content": "hurtigste drikker"
+      },
+      {
+        "id": "38",
+        "fieldNumber": 38,
+        "content": "beeeeqqq"
+      },
+      {
+        "id": "39",
+        "fieldNumber": 39,
+        "content": "lokomomo"
+      },
+      {
+        "id": "40",
+        "fieldNumber": 40,
+        "content": "gtgte"
+      },
+      {
+        "id": "41",
+        "fieldNumber": 41,
+        "content": "qqqqwwwwww"
+      },
+      {
+        "id": "42",
+        "fieldNumber": 42,
+        "content": "nunununu"
+      },
+      {
+        "id": "43",
+        "fieldNumber": 43,
+        "content": "åååååå"
+      },
+      {
+        "id": "44",
+        "fieldNumber": 44,
+        "content": "ttttt"
+      }
+    ]
   },
   {
-    "id": 3,
-    "name": "dedewdwede",
-    "description": "dfw",
-    "price": 42288,
-    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp"
+    "id": "3",
+    "name": "Festivaldrukspil",
+    "description": "Til jer som skal på festivaler og have lidt ekstra hjælp til at blive drunk",
+    "price": 70,
+    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp",
+    "questions": [
+      {
+        "id": "1",
+        "fieldNumber": 1,
+        "content": "højeste drikkker"
+      },
+      {
+        "id": "2",
+        "fieldNumber": 2,
+        "content": "laveste drikkker"
+      },
+      {
+        "id": "3",
+        "fieldNumber": 3,
+        "content": "langsommeste drikkker"
+      },
+      {
+        "id": "4",
+        "fieldNumber": 4,
+        "content": "frefe drikker"
+      },
+      {
+        "id": "5",
+        "fieldNumber": 5,
+        "content": "ggg drikkker"
+      },
+      {
+        "id": "6",
+        "fieldNumber": 6,
+        "content": "drikker"
+      },
+      {
+        "id": "7",
+        "fieldNumber": 7,
+        "content": "du drikker"
+      },
+      {
+        "id": "8",
+        "fieldNumber": 8,
+        "content": "frfrfrff"
+      },
+      {
+        "id": "9",
+        "fieldNumber": 9,
+        "content": "fgrgtgtt"
+      },
+      {
+        "id": "10",
+        "fieldNumber": 10,
+        "content": "ddefggggg"
+      },
+      {
+        "id": "11",
+        "fieldNumber": 11,
+        "content": "ooooooo"
+      },
+      {
+        "id": "12",
+        "fieldNumber": 12,
+        "content": "komnoko"
+      },
+      {
+        "id": "13",
+        "fieldNumber": 13,
+        "content": "bbbb"
+      },
+      {
+        "id": "14",
+        "fieldNumber": 14,
+        "content": "qwqqqq"
+      },
+      {
+        "id": "15",
+        "fieldNumber": 15,
+        "content": "mmmmm"
+      },
+      {
+        "id": "16",
+        "fieldNumber": 16,
+        "content": "bedste drikker"
+      },
+      {
+        "id": "17",
+        "fieldNumber": 17,
+        "content": "kldfre"
+      },
+      {
+        "id": "18",
+        "fieldNumber": 18,
+        "content": "mmmmm"
+      },
+      {
+        "id": "19",
+        "fieldNumber": 19,
+        "content": "mmmfefewe"
+      },
+      {
+        "id": "20",
+        "fieldNumber": 20,
+        "content": "okcdsdsd"
+      },
+      {
+        "id": "21",
+        "fieldNumber": 21,
+        "content": "bbbbbbbbb"
+      },
+      {
+        "id": "22",
+        "fieldNumber": 22,
+        "content": "jonglere 3 gange med bold, hvis taber, så drik"
+      },
+      {
+        "id": "23",
+        "fieldNumber": 23,
+        "content": "dedede"
+      },
+      {
+        "id": "24",
+        "fieldNumber": 24,
+        "content": "rererere"
+      },
+      {
+        "id": "25",
+        "fieldNumber": 25,
+        "content": "qqqqqqq"
+      },
+      {
+        "id": "26",
+        "fieldNumber": 26,
+        "content": "dans eller drik"
+      },
+      {
+        "id": "27",
+        "fieldNumber": 27,
+        "content": "degfrgtgtgtgt"
+      },
+      {
+        "id": "28",
+        "fieldNumber": 28,
+        "content": "mmmmmvffffff"
+      },
+      {
+        "id": "29",
+        "fieldNumber": 29,
+        "content": "kortest håret drikker"
+      },
+      {
+        "id": "30",
+        "fieldNumber": 30,
+        "content": "ddddeerqqqq"
+      },
+      {
+        "id": "31",
+        "fieldNumber": 31,
+        "content": "mmmmmmllææææææ"
+      },
+      {
+        "id": "32",
+        "fieldNumber": 32,
+        "content": "ææællllll"
+      },
+      {
+        "id": "33",
+        "fieldNumber": 33,
+        "content": "bbbbb"
+      },
+      {
+        "id": "34",
+        "fieldNumber": 34,
+        "content": "bbbnhnhhh"
+      },
+      {
+        "id": "35",
+        "fieldNumber": 35,
+        "content": "blegste drikker"
+      },
+      {
+        "id": "36",
+        "fieldNumber": 36,
+        "content": "mørkeste drikker"
+      },
+      {
+        "id": "37",
+        "fieldNumber": 37,
+        "content": "hurtigste drikker"
+      },
+      {
+        "id": "38",
+        "fieldNumber": 38,
+        "content": "beeeeqqq"
+      },
+      {
+        "id": "39",
+        "fieldNumber": 39,
+        "content": "lokomomo"
+      },
+      {
+        "id": "40",
+        "fieldNumber": 40,
+        "content": "gtgte"
+      },
+      {
+        "id": "41",
+        "fieldNumber": 41,
+        "content": "qqqqwwwwww"
+      },
+      {
+        "id": "42",
+        "fieldNumber": 42,
+        "content": "nunununu"
+      },
+      {
+        "id": "43",
+        "fieldNumber": 43,
+        "content": "åååååå"
+      },
+      {
+        "id": "44",
+        "fieldNumber": 44,
+        "content": "ttttt"
+      }
+    ]
   },
   {
-    "id": 4,
-    "name": "dyyhyy",
-    "description": "dfffffw",
-    "price": 335,
-    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp"
+    "id": "4",
+    "name": "Det voldsomme drukspil",
+    "description": "Jer der gerne vil blive fuckd",
+    "price": 100,
+    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp",
+    "questions": [
+      {
+        "id": "1",
+        "fieldNumber": 1,
+        "content": "højeste drikkker"
+      },
+      {
+        "id": "2",
+        "fieldNumber": 2,
+        "content": "laveste drikkker"
+      },
+      {
+        "id": "3",
+        "fieldNumber": 3,
+        "content": "langsommeste drikkker"
+      },
+      {
+        "id": "4",
+        "fieldNumber": 4,
+        "content": "frefe drikker"
+      },
+      {
+        "id": "5",
+        "fieldNumber": 5,
+        "content": "ggg drikkker"
+      },
+      {
+        "id": "6",
+        "fieldNumber": 6,
+        "content": "drikker"
+      },
+      {
+        "id": "7",
+        "fieldNumber": 7,
+        "content": "du drikker"
+      },
+      {
+        "id": "8",
+        "fieldNumber": 8,
+        "content": "frfrfrff"
+      },
+      {
+        "id": "9",
+        "fieldNumber": 9,
+        "content": "fgrgtgtt"
+      },
+      {
+        "id": "10",
+        "fieldNumber": 10,
+        "content": "ddefggggg"
+      },
+      {
+        "id": "11",
+        "fieldNumber": 11,
+        "content": "ooooooo"
+      },
+      {
+        "id": "12",
+        "fieldNumber": 12,
+        "content": "komnoko"
+      },
+      {
+        "id": "13",
+        "fieldNumber": 13,
+        "content": "bbbb"
+      },
+      {
+        "id": "14",
+        "fieldNumber": 14,
+        "content": "qwqqqq"
+      },
+      {
+        "id": "15",
+        "fieldNumber": 15,
+        "content": "mmmmm"
+      },
+      {
+        "id": "16",
+        "fieldNumber": 16,
+        "content": "bedste drikker"
+      },
+      {
+        "id": "17",
+        "fieldNumber": 17,
+        "content": "kldfre"
+      },
+      {
+        "id": "18",
+        "fieldNumber": 18,
+        "content": "mmmmm"
+      },
+      {
+        "id": "19",
+        "fieldNumber": 19,
+        "content": "mmmfefewe"
+      },
+      {
+        "id": "20",
+        "fieldNumber": 20,
+        "content": "okcdsdsd"
+      },
+      {
+        "id": "21",
+        "fieldNumber": 21,
+        "content": "bbbbbbbbb"
+      },
+      {
+        "id": "22",
+        "fieldNumber": 22,
+        "content": "jonglere 3 gange med bold, hvis taber, så drik"
+      },
+      {
+        "id": "23",
+        "fieldNumber": 23,
+        "content": "dedede"
+      },
+      {
+        "id": "24",
+        "fieldNumber": 24,
+        "content": "rererere"
+      },
+      {
+        "id": "25",
+        "fieldNumber": 25,
+        "content": "qqqqqqq"
+      },
+      {
+        "id": "26",
+        "fieldNumber": 26,
+        "content": "dans eller drik"
+      },
+      {
+        "id": "27",
+        "fieldNumber": 27,
+        "content": "degfrgtgtgtgt"
+      },
+      {
+        "id": "28",
+        "fieldNumber": 28,
+        "content": "mmmmmvffffff"
+      },
+      {
+        "id": "29",
+        "fieldNumber": 29,
+        "content": "kortest håret drikker"
+      },
+      {
+        "id": "30",
+        "fieldNumber": 30,
+        "content": "ddddeerqqqq"
+      },
+      {
+        "id": "31",
+        "fieldNumber": 31,
+        "content": "mmmmmmllææææææ"
+      },
+      {
+        "id": "32",
+        "fieldNumber": 32,
+        "content": "ææællllll"
+      },
+      {
+        "id": "33",
+        "fieldNumber": 33,
+        "content": "bbbbb"
+      },
+      {
+        "id": "34",
+        "fieldNumber": 34,
+        "content": "bbbnhnhhh"
+      },
+      {
+        "id": "35",
+        "fieldNumber": 35,
+        "content": "blegste drikker"
+      },
+      {
+        "id": "36",
+        "fieldNumber": 36,
+        "content": "mørkeste drikker"
+      },
+      {
+        "id": "37",
+        "fieldNumber": 37,
+        "content": "hurtigste drikker"
+      },
+      {
+        "id": "38",
+        "fieldNumber": 38,
+        "content": "beeeeqqq"
+      },
+      {
+        "id": "39",
+        "fieldNumber": 39,
+        "content": "lokomomo"
+      },
+      {
+        "id": "40",
+        "fieldNumber": 40,
+        "content": "gtgte"
+      },
+      {
+        "id": "41",
+        "fieldNumber": 41,
+        "content": "qqqqwwwwww"
+      },
+      {
+        "id": "42",
+        "fieldNumber": 42,
+        "content": "nunununu"
+      },
+      {
+        "id": "43",
+        "fieldNumber": 43,
+        "content": "åååååå"
+      },
+      {
+        "id": "44",
+        "fieldNumber": 44,
+        "content": "ttttt"
+      }
+    ]
   }
 ]

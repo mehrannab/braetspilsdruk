@@ -1,11 +1,17 @@
 import { createContext, ReactNode, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export type Item = {
-  id: number;
+  id: string;
   name: string;
   description: string;
   price: number;
   imgUrl: string;
+  questions: {
+    id: string;
+    fieldNumber: number;
+    content: string;
+  }[];
 };
 
 type CartContextType = {
@@ -26,7 +32,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [ordres, setOrdres] = useState<Item[]>([]);
 
   const addToCart = (item: Item) => {
-    setOrdres((prevState) => [...prevState, item]);
+    const newItem = { ...item, id: uuidv4() };
+
+    setOrdres((prevState) => [...prevState, newItem]);
   };
 
   const removeFromCart = (item: Item) => {
@@ -46,8 +54,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ ordres, addToCart, removeFromCart, totalPrice }}
-    >
+      value={{ ordres, addToCart, removeFromCart, totalPrice }}>
       {children}
     </CartContext.Provider>
   );

@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.14",
+    "@mui/x-data-grid": "^6.10.1",
     "@prisma/client": "^4.11.0",
     "@types/node": "18.15.5",
     "@types/react": "18.0.28",
@@ -26,10 +27,12 @@
     "react-hook-form": "^7.44.3",
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^6.11.2",
-    "typescript": "5.0.2"
+    "typescript": "5.0.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/react-input-mask": "^3.0.2",
+    "@types/uuid": "^9.0.2",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.8",
     "prisma": "^4.11.0"

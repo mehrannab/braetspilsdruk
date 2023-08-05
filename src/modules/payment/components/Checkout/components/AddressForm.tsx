@@ -39,7 +39,6 @@ export default function AddressForm() {
                 color: errors.firstName && "black",
               },
             }}
-            autoComplete="new-password"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -62,7 +61,6 @@ export default function AddressForm() {
                 color: errors.lastName && "black",
               },
             }}
-            autoComplete="new-password"
           />
         </Grid>
         <Grid item xs={12}>
@@ -85,7 +83,6 @@ export default function AddressForm() {
                 color: errors.address && "black",
               },
             }}
-            autoComplete="new-password"
           />
         </Grid>
         <Grid item xs={12}>
@@ -97,9 +94,10 @@ export default function AddressForm() {
             variant="outlined"
             {...register("email", {
               required: true,
+              pattern: /.*@.*/,
             })}
             error={!!errors.email}
-            helperText={errors.email ? "Dette felt skal udfyldes" : null}
+            helperText={errors.email ? "Dette felt skal indeholde et @" : ""}
             sx={{
               ...(errors.email && {
                 borderColor: theme.palette.error.main,
@@ -108,7 +106,6 @@ export default function AddressForm() {
                 color: errors.email && "black",
               },
             }}
-            autoComplete="new-password"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -131,7 +128,6 @@ export default function AddressForm() {
                 color: errors.city && "black",
               },
             }}
-            autoComplete="new-password"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -159,7 +155,6 @@ export default function AddressForm() {
                 color: errors.postalCode && "black",
               },
             }}
-            autoComplete="new-password"
           />
         </Grid>
       </Grid>

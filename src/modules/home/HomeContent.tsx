@@ -21,6 +21,10 @@ export function HomeContent() {
     router.push({ pathname: "/premade" });
   }, [router]);
 
+  const handleNavigationCustom = React.useCallback(() => {
+    router.push({ pathname: "/custom" });
+  }, [router]);
+
   return (
     <>
       <Grid
@@ -28,8 +32,7 @@ export function HomeContent() {
         direction="column"
         alignItems="center"
         spacing={theme.spacing(6)}
-        marginTop={5}
-      >
+        marginTop={5}>
         <Grid item>
           <Grid container justifyContent={"center"} alignItems={"flex-end"}>
             <Grid item xs={12}>
@@ -56,7 +59,7 @@ export function HomeContent() {
                 color="secondary"
                 variant="contained"
                 size="large"
-              >
+                onClick={handleNavigationCustom}>
                 Design dit eget drukspil
               </StyledOptionsButton>
             </Grid>
@@ -65,8 +68,7 @@ export function HomeContent() {
                 color="secondary"
                 variant="contained"
                 size="large"
-                onClick={handleNavigationPremade}
-              >
+                onClick={handleNavigationPremade}>
                 Køb et færdiglavet drukspil
               </StyledOptionsButton>
             </Grid>

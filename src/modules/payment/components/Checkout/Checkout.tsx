@@ -1,5 +1,5 @@
 import { AppBarDrawer } from "@/components/appbar/AppBarDrawer";
-import { styled } from "@mui/material";
+import { Alert, styled } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -13,6 +13,9 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import AddressForm from "./components/AddressForm";
 import PaymentForm from "./components/PaymentForm";
 import Review from "./components/Review";
+import CartContext from "@/contexts/CartContext";
+import { useContext, useEffect } from "react";
+import AlertDialogConfirm from "./components/AlertDialogConfirm";
 
 export interface IFormInputShipping {
   firstName: string;
@@ -61,22 +64,45 @@ export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
   const methods = useForm<IFormInputShipping>();
   const email = methods.getValues().email;
+  const { ordres, totalPrice } = useContext(CartContext);
+  const [loading, setLoading] = React.useState(false);
+  const [errorPayment, setErrorPayment] = React.useState(false);
+
+  useEffect(() => {
+    console.log(ordres);
+  });
 
   const onSubmit: SubmitHandler<IFormInputShipping> = async (data) => {
     try {
+      setLoading(true);
+
+      const payload = {
+        data,
+        ordres: ordres,
+        totalPrice: totalPrice,
+      };
+
+      console.log(payload);
+
       const response = await fetch("/api/payment", {
         method: "POST",
         headers: {
           "Content-Type": "application/JSON",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
         console.log("Payment successful");
+        handleNext();
+      } else {
+        throw new Error("Payment failed");
       }
     } catch (error) {
-      console.log(error);
+      console.log({ error });
+      setErrorPayment(true);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -87,7 +113,7 @@ export default function Checkout() {
       }
     });
 
-    console.log(activeStep, " - Activestep");
+    console.log(ordres.map((ordre) => ordre.id));
   };
 
   const handleBack = () => {
@@ -95,22 +121,31 @@ export default function Checkout() {
   };
 
   const handleSubmitAndNext = () => {
-    methods.handleSubmit(onSubmit)();
-    handleNext();
+    if (loading === false) {
+      methods.handleSubmit(onSubmit)();
+    }
+    setErrorPayment(false);
   };
 
   return (
     <>
       <AppBarDrawer />
-      <Container component="main" maxWidth="sm" sx={{ mb: 4, marginTop: 5 }}>
+      {errorPayment && <AlertDialogConfirm />}
+      <Container component="main" maxWidth="sm" sx={{ mb: 4, marginTop: 10 }}>
+        {ordres.length === 0 && (
+          <Alert variant="standard" severity="warning">
+            <Typography color="#ed6c02">
+              Du kan ikke fortsætte til checkout, da din indkøbskurv er tom!
+            </Typography>
+          </Alert>
+        )}
         <Paper
           variant="outlined"
           sx={{
             my: { xs: 3, md: 6 },
             p: { xs: 2, md: 3 },
             backgroundColor: "#FF6F3A",
-          }}
-        >
+          }}>
           <Typography component="h1" variant="h4" align="center">
             Checkout
           </Typography>
@@ -143,12 +178,12 @@ export default function Checkout() {
                         variant="contained"
                         color="success"
                         onClick={handleBack}
-                        sx={{ mt: 3, ml: 1 }}
-                      >
+                        sx={{ mt: 3, ml: 1 }}>
                         Tilbage
                       </Button>
                     )}
                     <Button
+                      disabled={ordres.length === 0 || loading}
                       variant="contained"
                       onClick={
                         activeStep === steps.length - 1
@@ -156,9 +191,10 @@ export default function Checkout() {
                           : handleNext
                       }
                       sx={{ mt: 3, ml: 1 }}
-                      color="success"
-                    >
-                      {activeStep === steps.length - 1
+                      color="success">
+                      {loading
+                        ? "Loading..."
+                        : activeStep === steps.length - 1
                         ? "Placer ordre"
                         : "Næste"}
                     </Button>

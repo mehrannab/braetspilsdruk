@@ -7,35 +7,43 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
+model Question {
+  questionId String   @default(cuid()) @id
+  fieldNumber Int 
+  content    String
+  itemId     String
+  item       Item     @relation(fields: [itemId], references: [itemId])
+}
+
 model Item {
-  id        String   @default(cuid()) @id
-  ordreId   String   @unique
-  questions String[]
-  ordre     Ordre    @relation(fields: [ordreId], references: [id])
+  itemId      String   @default(cuid()) @id
+  name        String
+  price       Float
+  description String
+  questions   Question[]
+  ordreId     String
+  ordre       Ordre    @relation(fields: [ordreId], references: [ordreId])
 }
 
 model Ordre {
-  id          String  @default(cuid()) @id
-  name        String
+  ordreId     String   @default(cuid()) @id
   quantity    Int
-  description String?
-  price       Int
-  shipping    String
-  userId      String  @unique
-  item        Item[]
-  user        User    @relation(fields: [userId], references: [id])
+  totalPrice  Float
+  shipping    Float
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [userId])
+  items       Item[]
 }
 
 model User {
-  id         String   @default(cuid()) @id
-  firstName  String
-  lastName   String
-  email      String   @unique
-  createdAt  DateTime @default(now())
-  street     String
-  city       String
-  state      String
-  postalCode String
-  country    String
-  ordre      Ordre?
+  userId      String   @default(cuid()) @id
+  firstName   String
+  lastName    String
+  email       String   @unique
+  createdAt   DateTime @default(now())
+  street      String
+  city        String
+  postalCode  String
+  ordre       Ordre?
 }
