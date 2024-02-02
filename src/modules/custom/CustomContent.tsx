@@ -1,8 +1,10 @@
+"use client";
+
 import { Grid } from "@mui/material";
 import { AddToCartButton } from "./components/AddToCartButton";
 import { BoardGame } from "./components/BoardGame";
 import { CustomGuideText } from "./components/CustomGuideText";
-import { QuestionTableEdit } from "./components/QuestionTableEdit";
+import { TableWithQuestion } from "./components/TableWithQuestion";
 
 export function CustomContent() {
   return (
@@ -19,8 +21,14 @@ export function CustomContent() {
       <Grid item xs={6}>
         <BoardGame />
       </Grid>
-      <Grid item xs={12}>
-        <QuestionTableEdit />
+      <Grid
+        container
+        direction={"column"}
+        alignItems="center"
+        justifyContent="center">
+        <Grid item xs={12}>
+          <TableWithQuestion />
+        </Grid>
       </Grid>
     </Grid>
   );

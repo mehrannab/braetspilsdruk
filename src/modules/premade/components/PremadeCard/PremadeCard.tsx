@@ -63,7 +63,7 @@ export function PremadeCard() {
                   alt="The house from the offer."
                   src={item.imgUrl}
                   style={{ width: "100%", height: "100%" }}
-                  onClick={(e) => handleImage(item.imgUrl)}
+                  onClick={(e) => handleImage(item.imgUrl ?? "")}
                 />
               </Tooltip>
               <CardContent>

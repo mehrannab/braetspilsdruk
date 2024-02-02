@@ -35,7 +35,17 @@ export function AppBarDrawer() {
               <NavDrawer />
             </Grid>
             <Grid item display={"flex"}>
-              <Tooltip title="Se indkøbskurv" placement="left">
+              <Tooltip
+                title={
+                  <div>
+                    {ordres.map((item) => (
+                      <div key={item.id}>
+                        {item.name} - {item.price} kr
+                      </div>
+                    ))}
+                  </div>
+                }
+                placement="bottom">
                 <ShoppingBasketIcon
                   fontSize="large"
                   onClick={handleRouting("/checkout")}
@@ -55,8 +65,7 @@ export function AppBarDrawer() {
                 size="large"
                 sx={{ backgroundColor: "#deb887" }}
                 variant="contained"
-                onClick={handleRouting("/")}
-              >
+                onClick={handleRouting("/")}>
                 Gå til startside
               </Button>
             </Grid>

@@ -15,5 +15,6 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: "cursive",
+    fontSize: 16,
   },
 });

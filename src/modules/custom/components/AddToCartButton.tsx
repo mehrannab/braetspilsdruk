@@ -1,24 +1,35 @@
+import CartContext, { Item } from "@/contexts/CartContext";
+import QuestionListContext from "@/contexts/QuestionListContext";
 import { Box, Button, Grid, Paper, Typography, styled } from "@mui/material";
-import React from "react";
-
-const SquareContainer = styled(Paper)({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "40%",
-  height: "25%",
-  boxSizing: "border-box",
-  border: `3px solid`,
-});
+import React, { useContext, useEffect } from "react";
 
 export function AddToCartButton() {
+  const { questionList, setQuestionList } = useContext(QuestionListContext);
+  const { addToCart } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    const itemToAdd: Item = {
+      id: "2",
+      name: "Eget designet spil",
+      description: "Egen beskrivelse",
+      price: 75,
+      imgUrl: "dummy",
+      questions: questionList as unknown as Item["questions"],
+    };
+
+    addToCart(itemToAdd);
+  };
+
   return (
-    <SquareContainer>
+    <>
       <Typography variant="h5">Pris 99 kr</Typography>
-      <Button variant="contained" color="primary">
+      <Button
+        disabled={questionList.length != 45}
+        variant="contained"
+        color="primary"
+        onClick={handleAddToCart}>
         Tilføj til kurven
       </Button>
-    </SquareContainer>
+    </>
   );
 }

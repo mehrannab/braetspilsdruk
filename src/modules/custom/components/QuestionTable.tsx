@@ -23,8 +23,6 @@ export function QuestionTable() {
     question: `Question ${index + 1}`,
   }));
 
-  console.log(array);
-
   const firstHalf = array.slice(0, 22);
   const secondHalf = array.slice(22, 45);
 
