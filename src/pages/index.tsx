@@ -10,7 +10,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const getStaticProps: GetStaticProps = async () => {
   // const datadummy = await prisma.user.findMany();
-  // console.log(datadummy);
 
   return {
     props: {

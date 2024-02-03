@@ -68,23 +68,31 @@ export default function Checkout() {
   const [loading, setLoading] = React.useState(false);
   const [errorPayment, setErrorPayment] = React.useState(false);
 
-  useEffect(() => {
-    console.log(ordres);
-  });
-
   const onSubmit: SubmitHandler<IFormInputShipping> = async (data) => {
     try {
       setLoading(true);
 
+      // const payload = {
+      //   data,
+      //   ordres: ordres,
+      //   totalPrice: totalPrice,
+      // };
+
+      // const response = await fetch("/api/payment", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/JSON",
+      //   },
+      //   body: JSON.stringify(payload),
+      // });
+
       const payload = {
-        data,
-        ordres: ordres,
-        totalPrice: totalPrice,
+        data: data.email,
       };
 
       console.log(payload);
 
-      const response = await fetch("/api/payment", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/JSON",
@@ -92,14 +100,14 @@ export default function Checkout() {
         body: JSON.stringify(payload),
       });
 
+      console.log(response);
+
       if (response.ok) {
-        console.log("Payment successful");
         handleNext();
       } else {
         throw new Error("Payment failed");
       }
     } catch (error) {
-      console.log({ error });
       setErrorPayment(true);
     } finally {
       setLoading(false);
@@ -112,8 +120,6 @@ export default function Checkout() {
         setActiveStep(activeStep + 1);
       }
     });
-
-    console.log(ordres.map((ordre) => ordre.id));
   };
 
   const handleBack = () => {

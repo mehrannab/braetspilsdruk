@@ -28,10 +28,6 @@ export function PremadeCard() {
   const [image, setImage] = useState("false");
   const { addToCart } = useContext(CartContext);
 
-  useEffect(() => {
-    console.log(faerdigeBraetspil);
-  });
-
   const handleClose = () => {
     setOpen(false);
   };
