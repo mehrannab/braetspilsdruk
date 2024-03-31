@@ -5,6 +5,7 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { ReactElement, ReactNode } from "react";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -20,6 +21,12 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <CartProvider>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Yellowtail&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {getLayout(<Component {...pageProps} />)}

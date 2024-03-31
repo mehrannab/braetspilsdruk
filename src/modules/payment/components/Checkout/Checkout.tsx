@@ -150,7 +150,6 @@ export default function Checkout() {
           sx={{
             my: { xs: 3, md: 6 },
             p: { xs: 2, md: 3 },
-            backgroundColor: "#FF6F3A",
           }}>
           <Typography component="h1" variant="h4" align="center">
             Checkout

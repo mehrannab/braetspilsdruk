@@ -4,9 +4,6 @@ import { Typography } from "@mui/material";
 import { GetStaticProps } from "next";
 import { Inter } from "next/font/google";
 import { ReactElement } from "react";
-import prisma from "../lib/prisma";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const getStaticProps: GetStaticProps = async () => {
   // const datadummy = await prisma.user.findMany();
@@ -20,9 +17,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function Home() {
   return (
-    <>
+    <div>
       <HomeContent />
-    </>
+    </div>
   );
 }
 

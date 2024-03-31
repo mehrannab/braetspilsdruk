@@ -51,12 +51,7 @@ export function NavDrawer() {
       <IconButton size="large" edge="start" onClick={toggleDrawerOpen}>
         <MenuIcon />
       </IconButton>
-      <Drawer
-        PaperProps={{ sx: { backgroundColor: "#FF6F3A" } }}
-        anchor="left"
-        open={isDrawerOpen}
-        onClose={toggleDrawerClose}
-      >
+      <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawerClose}>
         <List>
           <ListItemButton onClick={handleRouting("/")}>
             <ListItem>

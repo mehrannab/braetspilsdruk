@@ -1,83 +1,117 @@
-import { Box, Button, Divider, Grid, styled, useTheme } from "@mui/material";
+import SimpleGrow from "@/components/customMorph/CustomMorph";
+import InfoBox from "@/components/infoBox/InfoBox";
+import SlideAnimate from "@/components/slideAnimation/SlideAnimate";
+import LaunchIcon from "@mui/icons-material/Launch";
+import { Grid } from "@mui/material";
 import Image from "next/image";
-import clinkingbeer from "../../images/clinkingbeer.gif";
-import overskrift from "../../images/overskrift.png";
-import step1 from "../../images/step1.png";
-import step2 from "../../images/step2.png";
-import step3 from "../../images/step3.png";
-import React from "react";
 import { useRouter } from "next/router";
 
-const StyledOptionsButton = styled(Button)({
-  fontWeight: "bold",
-  color: "darkgreen",
-});
-
 export function HomeContent() {
-  const theme = useTheme();
   const router = useRouter();
-
-  const handleNavigationPremade = React.useCallback(() => {
-    router.push({ pathname: "/premade" });
-  }, [router]);
-
-  const handleNavigationCustom = React.useCallback(() => {
-    router.push({ pathname: "/custom" });
-  }, [router]);
 
   return (
     <>
       <Grid
         container
         direction="column"
+        justifyContent="center"
         alignItems="center"
-        spacing={theme.spacing(6)}
-        marginTop={5}>
+        marginBottom={10}
+        marginTop={14}>
         <Grid item>
-          <Grid container justifyContent={"center"} alignItems={"flex-end"}>
-            <Grid item xs={12}>
-              <Image src={overskrift} width={650} height={200} alt={"Title"} />
+          <Image src="/celebration.svg" height={500} width={500} alt={""} />
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        direction={"row"}
+        justifyContent={"space-between"}
+        marginBottom={20}
+        marginLeft={6}>
+        <Grid item display={"flex"} marginBottom={12} marginTop={8}>
+          <Grid container direction={"column"} justifyContent={"space-between"}>
+            <Grid item>
+              <SimpleGrow
+                images={[
+                  "/animateSection1/cocktail.svg",
+                  "/animateSection1/boardgames.svg",
+                  "/animateSection1/party.svg",
+                ]}
+              />
             </Grid>
-          </Grid>
-          <Grid item xs={12}>
-            <Grid container justifyContent={"center"} alignItems={"center"}>
-              <Grid item>
-                <Image
-                  src={clinkingbeer}
-                  width={250}
-                  height={250}
-                  alt={"Skål"}
-                />
-              </Grid>
+            <Grid item>
+              <SimpleGrow
+                images={[
+                  "/animateSection3/board-game.svg",
+                  "/animateSection3/cocktail1.svg",
+                  "/animateSection3/lol.svg",
+                ]}
+                delay={2000}
+              />
             </Grid>
           </Grid>
         </Grid>
+
         <Grid item>
-          <Grid container spacing={4}>
-            <Grid item>
-              <StyledOptionsButton
-                color="secondary"
-                variant="contained"
-                size="large"
-                onClick={handleNavigationCustom}>
-                Design dit eget drukspil
-              </StyledOptionsButton>
-            </Grid>
-            <Grid item>
-              <StyledOptionsButton
-                color="secondary"
-                variant="contained"
-                size="large"
-                onClick={handleNavigationPremade}>
-                Køb et færdiglavet drukspil
-              </StyledOptionsButton>
-            </Grid>
+          <Grid
+            container
+            direction={"column"}
+            alignItems="center"
+            justifyContent="center"
+            rowGap={10}>
+            <SlideAnimate hueA={50} hueB={80}>
+              <InfoBox
+                title={"Velkommen"}
+                text={"Vi garanterer for en god stund og sjove momenter"}
+                hasButton={false}
+                iconSVG={
+                  <Image src="/deal.svg" height={90} width={90} alt={""} />
+                }
+              />
+            </SlideAnimate>
+            <SlideAnimate hueA={150} hueB={180}>
+              <InfoBox
+                title={"Design eget"}
+                text={
+                  "Slip tankerne løs og design dit helt eget drukspil ! Kun du sætter sværhedsgraden"
+                }
+                hasButton={true}
+                buttonText={"Byg her"}
+                buttonIcon={<LaunchIcon />}
+                iconSVG={
+                  <Image src="/lego.svg" height={60} width={60} alt={""} />
+                }
+                routingOnClick={() => router.push("/custom")}
+              />
+            </SlideAnimate>
+            <SlideAnimate hueA={290} hueB={320}>
+              <InfoBox
+                title={"Færdiglavede"}
+                text={
+                  "Grib øjeblikket med vores færdiglavede drukspil ! De udskifter konstant og er der i begrænset tid "
+                }
+                hasButton={true}
+                buttonText={"Se samlingen"}
+                buttonIcon={<LaunchIcon />}
+                iconSVG={
+                  <Image src="/hobby.svg" height={70} width={70} alt={""} />
+                }
+                routingOnClick={() => router.push("/premade")}
+              />
+            </SlideAnimate>
           </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <Image src={step1} width={375} height={375} alt={"Step1"} />
-          <Image src={step2} width={375} height={375} alt={"Step2"} />
-          <Image src={step3} width={375} height={375} alt={"Step3"} />
+
+        <Grid item marginRight={12} marginTop={62}>
+          <SimpleGrow
+            images={[
+              "/animateSection2/dance.svg",
+              "/animateSection2/dices.svg",
+              "/animateSection2/happy.svg",
+            ]}
+            delay={1000}
+          />
         </Grid>
       </Grid>
     </>

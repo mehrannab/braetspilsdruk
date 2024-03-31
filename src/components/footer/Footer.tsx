@@ -4,7 +4,7 @@ import FooterListItem from "./FooterListItem";
 
 export default function Footer() {
   return (
-    <AppBar color="primary" position="absolute">
+    <AppBar color="primary" position="static">
       <Toolbar sx={{ padding: 2 }}>
         <Grid
           container

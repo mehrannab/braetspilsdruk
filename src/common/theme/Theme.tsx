@@ -4,17 +4,25 @@ import { brown, yellow } from "@mui/material/colors";
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#FF6F3A",
+      main: "#9F70FD",
     },
     secondary: {
-      main: "#99CC66",
+      main: "#FF8911",
     },
     background: {
-      default: "#deb887",
+      default: "#7F27FF",
     },
   },
   typography: {
-    fontFamily: "cursive",
-    fontSize: 16,
+    fontFamily: ["Yellowtail", "cursive"].join(","),
   },
+
+  // Optionally, use @import here
+  // components: {
+  //   MuiCssBaseline: {
+  //     styleOverrides: `
+  //     @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap')
+  //     `,
+  //   },
+  // },
 });
