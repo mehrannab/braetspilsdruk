@@ -55,7 +55,6 @@ export default function InfoBox(props: InfoProps) {
             }}>
             <Typography
               textTransform={"uppercase"}
-              fontWeight={""}
               gutterBottom
               variant="h4"
               component="div"

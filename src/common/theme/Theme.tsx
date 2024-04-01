@@ -14,7 +14,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Yellowtail", "cursive"].join(","),
+    fontFamily: ["cursive"].join(","),
   },
 
   // Optionally, use @import here

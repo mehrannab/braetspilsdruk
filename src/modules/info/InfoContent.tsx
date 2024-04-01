@@ -1,16 +1,26 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Fade, Grid, Typography } from "@mui/material";
 import React from "react";
+import Image from "next/image";
+import InfoCard from "@/components/infoCard/InfoCard";
 
 export default function InfoContent() {
   return (
-    <Grid container justifyContent={"center"}>
-      <Grid item>
-        <Typography fontWeight={"bold"} fontSize={"36px"}>
-          Om braetspilsdruk
-        </Typography>
-      </Grid>
-      <Grid item>
-        <Typography>
+    <>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        marginBottom={6}>
+        <Grid item>
+          <Image src="/hello.svg" height={100} width={100} alt={""} />
+        </Grid>
+        <Grid item>
+          <Typography fontWeight={"bold"} fontSize={"36px"}>
+            Om braetspilsdruk
+          </Typography>
+        </Grid>
+        <Grid item mx={22}>
           Forestil dig et spil, der ikke bare er et spil, men en rejse gennem
           dine egne ideer, humor og kreativitet. På vores hjemmeside kan du nu
           omdanne denne drøm til virkelighed ved at designe dit eget
@@ -26,55 +36,76 @@ export default function InfoContent() {
           skabt af jer og for jer. Så tag terningen i hånden og lad eventyret
           begynde – et eventyr, hvor hver runde er en ny side i jeres fælles
           historiebog.
-        </Typography>
+        </Grid>
       </Grid>
-      <Grid item marginTop={6}>
-        <Typography fontWeight={"bold"} fontSize={"22px"}>
-          Handelsbetingelser og vilkår
-        </Typography>
+
+      <Grid container direction="row" alignItems="flex-start" marginBottom={10}>
+        <Grid container item justifyContent="space-evenly">
+          <InfoCard cardTitle={"Generelt"} text={"dede"} timeout={1000} />
+          <Box marginTop={10}>
+            <Fade in={true} timeout={1000}>
+              <Image src="/info/rules.svg" height={300} width={300} alt={""} />
+            </Fade>
+          </Box>
+        </Grid>
+        <Grid container item justifyContent="space-evenly">
+          <Box marginTop={10}>
+            <Fade in={true} timeout={2000}>
+              <Image
+                src="/info/handshake.svg"
+                height={300}
+                width={300}
+                alt={""}
+              />
+            </Fade>
+          </Box>
+
+          <InfoCard cardTitle={"Handelsbetingelser og vilkår"} timeout={2000} />
+        </Grid>
+
+        <Grid container item justifyContent="space-evenly">
+          <InfoCard cardTitle={"Design og indhold"} timeout={3000} />
+          <Box marginTop={10}>
+            <Fade in={true} timeout={3000}>
+              <Image src="/info/ux.svg" height={300} width={300} alt={""} />
+            </Fade>
+          </Box>
+        </Grid>
+        <Grid container item justifyContent="space-evenly">
+          <Box marginTop={10}>
+            <Fade in={true} timeout={4000}>
+              <Image src="/info/wallet.svg" height={300} width={300} alt={""} />
+            </Fade>
+          </Box>
+          <InfoCard cardTitle="Betaling" timeout={4000} />
+        </Grid>
+        <Grid container item justifyContent="space-evenly">
+          <InfoCard cardTitle="Levering" timeout={5000} />
+          <Box marginTop={10}>
+            <Fade in={true} timeout={5000}>
+              <Image
+                src="/info/fast-delivery.svg"
+                height={300}
+                width={300}
+                alt={""}
+              />
+            </Fade>
+          </Box>
+        </Grid>
+        <Grid container item justifyContent="space-evenly">
+          <Box marginTop={10}>
+            <Fade in={true} timeout={4000}>
+              <Image
+                src="/info/withdrawal.svg"
+                height={300}
+                width={300}
+                alt={""}
+              />
+            </Fade>
+          </Box>
+          <InfoCard cardTitle="Fortrydelsesret" timeout={6000} />
+        </Grid>
       </Grid>
-      <Grid>
-        <Typography>
-          <Box component={"span"} fontWeight={"bold"}>
-            Generelt:
-          </Box>{" "}
-          Disse vilkår gælder for køb af brætspilsdruk designet via vores
-          hjemmeside. Ved at benytte vores tjeneste accepterer du disse vilkår.
-        </Typography>
-        <Typography>
-          <Box component={"span"} fontWeight={"bold"}>
-            Design og indhold:
-          </Box>{" "}
-          Brugeren er selv ansvarlig for det indhold, der tilføjes til
-          brætspillet. Indholdet må ikke krænke tredjepartsrettigheder eller
-          indeholde ulovligt materiale.
-        </Typography>
-        <Typography>
-          <Box component={"span"} fontWeight={"bold"}>
-            Betaling:
-          </Box>{" "}
-          Betaling for brætspillet sker online via sikre betalingsmetoder.
-          Prisen fastsættes ud fra de valgte tilpasninger og størrelsen af
-          brætspillet.
-        </Typography>
-        <Typography>
-          <Box component={"span"} fontWeight={"bold"}>
-            Levering:
-          </Box>{" "}
-          Brætspillet leveres som en digital fil eller fysisk produkt afhængig
-          af valg. Leveringstiden kan variere baseret på designprocessen og
-          leveringsmetode.
-        </Typography>
-        <Typography>
-          <Box component={"span"} fontWeight={"bold"}>
-            Fortrydelsesret:
-          </Box>{" "}
-          Der er ingen fortrydelsesret for tilpassede brætspil, da disse er
-          specialfremstillede.
-        </Typography>
-        <Typography></Typography>
-      </Grid>
-      <Grid item></Grid>
-    </Grid>
+    </>
   );
 }
