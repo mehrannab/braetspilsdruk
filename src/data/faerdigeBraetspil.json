@@ -2,9 +2,9 @@
   {
     "id": "1",
     "name": "Sommerdrukspil",
-    "description": "Dette drukspil er til jer som vil blive lidt sommertipsy",
+    "description": "Til jer der er klar på sol, sjov og skøre udfordringer!",
     "price": 50,
-    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp",
+    "imgUrl": "/premade/summergame.svg",
     "questions": [
       {
         "id": "1",
@@ -231,9 +231,9 @@
   {
     "id": "2",
     "name": "Studenterdrukspil",
-    "description": "Dette er til jer som lige er blevet studenter og skal gå amok",
+    "description": "Til jer der lige er blevet studenter og klar på alt!",
     "price": 60,
-    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp",
+    "imgUrl": "/premade/summergame.svg",
     "questions": [
       {
         "id": "1",
@@ -460,9 +460,9 @@
   {
     "id": "3",
     "name": "Festivaldrukspil",
-    "description": "Til jer som skal på festivaler og have lidt ekstra hjælp til at blive drunk",
+    "description": "Til jer der skal på festival og vil piske en stemning op!",
     "price": 70,
-    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp",
+    "imgUrl": "/premade/summergame.svg",
     "questions": [
       {
         "id": "1",
@@ -688,10 +688,10 @@
   },
   {
     "id": "4",
-    "name": "Det voldsomme drukspil",
-    "description": "Jer der gerne vil blive fuckd",
+    "name": "Juledrukspil",
+    "description": "Til jer der fejrer julen på den helt rigtige måde!",
     "price": 100,
-    "imgUrl": "https://media.nature.com/lw767/magazine-assets/d41586-021-00673-0/d41586-021-00673-0_18970332.jpg?as=webp",
+    "imgUrl": "/premade/summergame.svg",
     "questions": [
       {
         "id": "1",

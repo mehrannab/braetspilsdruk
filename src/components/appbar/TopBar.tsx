@@ -48,14 +48,14 @@ export default function TopBar() {
                   pathnameCheck="/"
                 />
               </Grid>
-              <Grid item>
+              {/* <Grid item>
                 <ButtonsTopBar
                   icon={<CreateIcon />}
                   text="Lav selv"
                   onClick={() => router.push("/custom")}
                   pathnameCheck="/custom"
                 />
-              </Grid>
+              </Grid> */}
               <Grid item>
                 <ButtonsTopBar
                   icon={<FactCheckIcon />}
