@@ -14,15 +14,13 @@ import {
   Typography,
   useScrollTrigger,
 } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import ButtonsTopBar from "./appBarButtons/ButtonsTopBar";
 import { useRouter } from "next/router";
 import React from "react";
 
 function ElevationScroll(props: { children: any }) {
   const { children } = props;
-
-  // useScrollTrigger can be used here if needed for future behavior changes
   const trigger = useScrollTrigger();
 
   return React.cloneElement(children, {
@@ -33,6 +31,19 @@ function ElevationScroll(props: { children: any }) {
 export default function TopBar() {
   const { ordres } = useContext(CartContext);
   const router = useRouter();
+  const [addToBasket, setAddToBasket] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (ordres.length > 0) {
+      setAddToBasket(true);
+    }
+
+    const timer = setTimeout(() => {
+      setAddToBasket(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [ordres.length]);
 
   return (
     <React.Fragment>
@@ -88,19 +99,25 @@ export default function TopBar() {
                   placement="bottom">
                   <IconButton onClick={() => router.push("/checkout")}>
                     <ShoppingBasketIcon
+                      color={addToBasket ? "success" : "secondary"}
                       onClick={() => router.push("/checkout")}
-                      sx={{ fontSize: 45, cursor: "pointer", color: "white" }}
+                      sx={{ fontSize: 45, cursor: "pointer" }}
                     />
                   </IconButton>
                 </Tooltip>
               ) : (
                 <IconButton onClick={() => router.push("/checkout")}>
                   <ShoppingBasketIcon
-                    sx={{ fontSize: 45, cursor: "pointer", color: "white" }}
+                    color={addToBasket ? "success" : "secondary"}
+                    sx={{ fontSize: 45, cursor: "pointer" }}
                   />
                 </IconButton>
               )}
-              <Typography variant="subtitle1" fontSize={20} fontWeight="bold">
+              <Typography
+                variant="subtitle1"
+                fontSize={20}
+                fontWeight="bold"
+                color={addToBasket ? "#2e7d32" : "#FF8911"}>
                 {ordres.length}
               </Typography>
             </Grid>

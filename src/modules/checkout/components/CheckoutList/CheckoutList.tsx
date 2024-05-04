@@ -1,7 +1,4 @@
 import CartContext, { Item } from "@/contexts/CartContext";
-import QuestionListContext, {
-  QuestionRule,
-} from "@/contexts/QuestionListContext";
 import {
   Button,
   Divider,
@@ -10,10 +7,9 @@ import {
   ListItem,
   ListItemText,
   ListSubheader,
-  Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
-import { SetStateAction, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import DialogQuestions from "../dialogQuestions/DialogQuestions";
 
 export function CheckoutList() {
@@ -32,7 +28,6 @@ export function CheckoutList() {
 
   function handleClickOpen(item: Item): void {
     setSelectedItem(item);
-    console.log(item, " : selected");
     setOpen(true);
   }
 
