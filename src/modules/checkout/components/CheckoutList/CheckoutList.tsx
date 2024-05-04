@@ -85,7 +85,10 @@ export function CheckoutList() {
       )}
       <List sx={{ width: "100%", maxWidth: 500, bgcolor: "#FF6F3A" }}>
         <ListItem>
-          <ListItemText>Subtotal: {totalPrice + " kr"}</ListItemText>
+          <ListItemText primary={"Levering"} secondary={"40 kr"} />
+        </ListItem>
+        <ListItem>
+          <ListItemText>Subtotal: {totalPrice + 40 + " kr"}</ListItemText>
           <Button
             variant="contained"
             color="success"

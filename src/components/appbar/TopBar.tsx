@@ -1,12 +1,11 @@
 import CartContext from "@/contexts/CartContext";
-import CreateIcon from "@mui/icons-material/Create";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import {
   AppBar,
-  CssBaseline,
+  Button,
   Grid,
   IconButton,
   Toolbar,
@@ -14,10 +13,9 @@ import {
   Typography,
   useScrollTrigger,
 } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
-import ButtonsTopBar from "./appBarButtons/ButtonsTopBar";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useContext } from "react";
+import ButtonsTopBar from "./appBarButtons/ButtonsTopBar";
 
 function ElevationScroll(props: { children: any }) {
   const { children } = props;
@@ -29,21 +27,8 @@ function ElevationScroll(props: { children: any }) {
 }
 
 export default function TopBar() {
-  const { ordres } = useContext(CartContext);
+  const { ordres, totalPrice } = useContext(CartContext);
   const router = useRouter();
-  const [addToBasket, setAddToBasket] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (ordres.length > 0) {
-      setAddToBasket(true);
-    }
-
-    const timer = setTimeout(() => {
-      setAddToBasket(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [ordres.length]);
 
   return (
     <React.Fragment>
@@ -87,19 +72,77 @@ export default function TopBar() {
             <Grid item display={"flex"}>
               {ordres.length > 0 ? (
                 <Tooltip
+                  sx={{ borderRadius: 10 }}
                   title={
-                    <div>
+                    <Grid container direction={"column"}>
+                      <Grid
+                        item
+                        marginBottom={1}
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}>
+                        <Typography>Din indkøbskurv</Typography>
+                      </Grid>
                       {ordres.map((item) => (
-                        <div key={item.id}>
-                          {item.name} - {item.price} kr
-                        </div>
+                        <Grid
+                          item
+                          key={item.id}
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}>
+                          <Typography>{item.name}</Typography>
+                          <Typography>{item.price} kr</Typography>
+                        </Grid>
                       ))}
-                    </div>
+                      <Grid
+                        item
+                        marginTop={1}
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}>
+                        <Typography>Levering</Typography>
+                        <Typography>40 kr</Typography>
+                      </Grid>
+                      <Grid
+                        item
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}>
+                        <Typography>Pris i alt</Typography>
+                        <Typography>{totalPrice + 40} kr</Typography>
+                      </Grid>
+                      <Grid
+                        item
+                        marginTop={1}
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}>
+                        <Button
+                          variant="contained"
+                          sx={{ borderRadius: 8 }}
+                          color="success"
+                          onClick={() => router.push("/checkout")}>
+                          <Typography textTransform={"capitalize"}>
+                            Indkøbskurv
+                          </Typography>
+                        </Button>
+                      </Grid>
+                    </Grid>
                   }
                   placement="bottom">
                   <IconButton onClick={() => router.push("/checkout")}>
                     <ShoppingBasketIcon
-                      color={addToBasket ? "success" : "secondary"}
+                      color={"secondary"}
                       onClick={() => router.push("/checkout")}
                       sx={{ fontSize: 45, cursor: "pointer" }}
                     />
@@ -108,7 +151,7 @@ export default function TopBar() {
               ) : (
                 <IconButton onClick={() => router.push("/checkout")}>
                   <ShoppingBasketIcon
-                    color={addToBasket ? "success" : "secondary"}
+                    color={"secondary"}
                     sx={{ fontSize: 45, cursor: "pointer" }}
                   />
                 </IconButton>
@@ -117,7 +160,7 @@ export default function TopBar() {
                 variant="subtitle1"
                 fontSize={20}
                 fontWeight="bold"
-                color={addToBasket ? "#2e7d32" : "#FF8911"}>
+                color={"#FF8911"}>
                 {ordres.length}
               </Typography>
             </Grid>

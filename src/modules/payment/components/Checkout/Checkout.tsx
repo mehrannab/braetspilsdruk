@@ -1,4 +1,5 @@
 import { AppBarDrawer } from "@/components/appbar/AppBarDrawer";
+import CartContext from "@/contexts/CartContext";
 import { Alert, styled } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -9,13 +10,13 @@ import StepLabel from "@mui/material/StepLabel";
 import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { useContext } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import AddressForm from "./components/AddressForm";
+import AlertDialogConfirm from "./components/AlertDialogConfirm";
 import PaymentForm from "./components/PaymentForm";
 import Review from "./components/Review";
-import CartContext from "@/contexts/CartContext";
-import { useContext, useEffect } from "react";
-import AlertDialogConfirm from "./components/AlertDialogConfirm";
+import TopBar from "@/components/appbar/TopBar";
 
 export interface IFormInputShipping {
   firstName: string;
@@ -135,7 +136,7 @@ export default function Checkout() {
 
   return (
     <>
-      <AppBarDrawer />
+      <TopBar />
       {errorPayment && <AlertDialogConfirm />}
       <Container component="main" maxWidth="sm" sx={{ mb: 4, marginTop: 10 }}>
         {ordres.length === 0 && (

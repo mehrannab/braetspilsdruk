@@ -4,8 +4,6 @@ import { useContext } from "react";
 import { CheckoutList } from "./components/checkoutList/CheckoutList";
 
 export function CheckoutContent() {
-  const { ordres } = useContext(CartContext);
-
   return (
     <Grid container>
       <CheckoutList />

@@ -16,13 +16,24 @@ export const theme = createTheme({
   typography: {
     fontFamily: ["cursive"].join(","),
   },
-
-  // Optionally, use @import here
-  // components: {
-  //   MuiCssBaseline: {
-  //     styleOverrides: `
-  //     @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap')
-  //     `,
-  //   },
-  // },
+  components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: "#FF8911",
+          minHeight: 200,
+          minWidth: 200,
+        },
+      },
+    },
+  },
 });
+
+// Optionally, use @import here
+// components: {
+//   MuiCssBaseline: {
+//     styleOverrides: `
+//     @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap')
+//     `,
+//   },
+// },
