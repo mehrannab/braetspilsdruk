@@ -4,11 +4,13 @@ import React from "react";
 interface ShowQuestionsButtonProps {
   text?: string;
   onClick?: any;
+  disabled?: boolean;
 }
 
 export default function ShowQuestionsButton(props: ShowQuestionsButtonProps) {
   return (
     <Button
+      disabled={props.disabled}
       variant="contained"
       size="large"
       color="success"

@@ -93,7 +93,7 @@ export function CheckoutList() {
             variant="contained"
             color="success"
             disabled={totalPrice == 0}
-            onClick={handleRouting("/checkout/payment")}>
+            onClick={handleRouting("/checkout/payment/information")}>
             Betal
           </Button>
         </ListItem>

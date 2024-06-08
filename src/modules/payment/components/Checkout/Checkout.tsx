@@ -29,6 +29,7 @@ export interface IFormInputShipping {
   cardNumber: string;
   expDate: string;
   cvv: string;
+  phoneNumber: number;
 }
 
 const steps = ["Leveringsadresse", "Betalingsoplysninger", "Færdig"];

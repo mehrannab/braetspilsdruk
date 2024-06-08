@@ -26,6 +26,32 @@ export const theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          color: "black",
+          "& label.Mui-focused": {
+            color: "black",
+          },
+          "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+              borderColor: "black",
+            },
+          },
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          "&.Mui-error": {
+            color: "black",
+            fontSize: "0.85rem",
+            fontWeight: "bold",
+          },
+        },
+      },
+    },
   },
 });
 
