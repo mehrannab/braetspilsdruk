@@ -11,9 +11,6 @@ export function PaymentContent() {
   const pathname = usePathname();
 
   const values = methods.getValues();
-
-  console.log(values);
-
   return (
     <FormProvider {...methods}>
       {/* <Checkout /> */}

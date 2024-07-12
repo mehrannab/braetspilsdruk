@@ -58,12 +58,12 @@ export default function InfoBox(props: InfoProps) {
               gutterBottom
               variant="h4"
               component="div"
-              color="black">
+              color="white">
               {props.title}
             </Typography>
           </Grid>
           <Grid item>
-            <Typography>{props.text}</Typography>
+            <Typography color="white">{props.text}</Typography>
           </Grid>
         </Grid>
         <Grid container>

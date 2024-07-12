@@ -92,8 +92,6 @@ export default function Checkout() {
         data: data.email,
       };
 
-      console.log(payload);
-
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -101,8 +99,6 @@ export default function Checkout() {
         },
         body: JSON.stringify(payload),
       });
-
-      console.log(response);
 
       if (response.ok) {
         handleNext();

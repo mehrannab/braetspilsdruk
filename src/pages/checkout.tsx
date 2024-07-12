@@ -1,14 +1,9 @@
 import { Layout } from "@/common/layouts/Layout";
-import { CheckoutContent } from "@/modules/checkout";
-import { Box, Typography } from "@mui/material";
+import { CheckoutList } from "@/modules/checkout/components/checkoutList/CheckoutList";
 import { ReactElement } from "react";
 
 export default function Checkout() {
-  return (
-    <Box>
-      <CheckoutContent />
-    </Box>
-  );
+  return <CheckoutList />;
 }
 
 Checkout.getLayout = function getLayout(page: ReactElement) {

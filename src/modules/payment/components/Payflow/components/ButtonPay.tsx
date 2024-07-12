@@ -38,8 +38,6 @@ export default function ButtonPay() {
         data: data.email,
       };
 
-      console.log(payload);
-
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -47,8 +45,6 @@ export default function ButtonPay() {
         },
         body: JSON.stringify(payload),
       });
-
-      console.log(response);
 
       if (response.ok) {
         router.push("");

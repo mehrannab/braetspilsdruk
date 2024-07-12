@@ -8,7 +8,6 @@ export default function InfoResume() {
 
   useEffect(() => {
     const storedData = JSON.parse(sessionStorage.getItem("formData") || "");
-    console.log("Inde i information");
     if (storedData) {
       setFormData(storedData);
     }

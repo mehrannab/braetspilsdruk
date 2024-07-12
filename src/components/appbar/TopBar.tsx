@@ -16,6 +16,7 @@ import {
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import ButtonsTopBar from "./appBarButtons/ButtonsTopBar";
+import CreateIcon from "@mui/icons-material/Create";
 
 function ElevationScroll(props: { children: any }) {
   const { children } = props;
@@ -33,7 +34,7 @@ export default function TopBar() {
   return (
     <React.Fragment>
       <ElevationScroll>
-        <AppBar position="fixed">
+        <AppBar position="absolute" color="transparent">
           <Toolbar>
             <Grid container justifyContent={"space-evenly"} display={"flex"}>
               <Grid item>
@@ -44,14 +45,14 @@ export default function TopBar() {
                   pathnameCheck="/"
                 />
               </Grid>
-              {/* <Grid item>
+              <Grid item>
                 <ButtonsTopBar
                   icon={<CreateIcon />}
                   text="Lav selv"
                   onClick={() => router.push("/custom")}
                   pathnameCheck="/custom"
                 />
-              </Grid> */}
+              </Grid>
               <Grid item>
                 <ButtonsTopBar
                   icon={<FactCheckIcon />}
@@ -144,25 +145,30 @@ export default function TopBar() {
                     <ShoppingBasketIcon
                       color={"secondary"}
                       onClick={() => router.push("/checkout")}
-                      sx={{ fontSize: 45, cursor: "pointer" }}
+                      sx={{ fontSize: 45 }}
                     />
+                    <Typography
+                      variant="subtitle1"
+                      fontSize={20}
+                      fontWeight="bold"
+                      color={"#FF8911"}
+                      sx={{
+                        marginBottom: 4,
+                        position: "absolute",
+                        marginLeft: 5,
+                      }}>
+                      {ordres.length}
+                    </Typography>
                   </IconButton>
                 </Tooltip>
               ) : (
                 <IconButton onClick={() => router.push("/checkout")}>
                   <ShoppingBasketIcon
                     color={"secondary"}
-                    sx={{ fontSize: 45, cursor: "pointer" }}
+                    sx={{ fontSize: 45 }}
                   />
                 </IconButton>
               )}
-              <Typography
-                variant="subtitle1"
-                fontSize={20}
-                fontWeight="bold"
-                color={"#FF8911"}>
-                {ordres.length}
-              </Typography>
             </Grid>
           </Toolbar>
         </AppBar>

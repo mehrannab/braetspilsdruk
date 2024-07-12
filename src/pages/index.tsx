@@ -14,11 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function Home() {
-  return (
-    <div>
-      <HomeContent />
-    </div>
-  );
+  return <HomeContent />;
 }
 
 Home.getLayout = function getLayout(page: ReactElement) {

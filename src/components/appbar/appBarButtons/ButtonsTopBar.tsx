@@ -14,25 +14,22 @@ export default function ButtonsTopBar(props: ButtonsTopBarProps) {
 
   return (
     <Button
-      variant="contained"
+      variant="text"
       startIcon={props.icon}
       color="secondary"
+      size="large"
       onClick={props.onClick}
       disabled={props.pathnameCheck === pathname}
       sx={{
-        ...(props.pathnameCheck === pathname && {
-          bgcolor: "grey.500",
-          color: "white",
-          ":hover": {
-            bgcolor: "grey.700",
-          },
-        }),
+        fontWeight: "bold",
+        ":hover": {
+          bgcolor: "#301934",
+        },
+
         "&.Mui-disabled": {
-          bgcolor: "grey.500",
-          color: "white",
-          ":hover": {
-            bgcolor: "grey.500",
-          },
+          color: "#FF8911",
+          backgroundColor: "#6D1FDF",
+          borderBottom: 3,
         },
       }}>
       {props.text}

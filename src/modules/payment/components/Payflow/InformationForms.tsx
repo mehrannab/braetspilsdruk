@@ -24,14 +24,11 @@ export default function InformationForms() {
   const router = useRouter();
 
   const onSubmit = (data: IFormInputShipping) => {
-    console.log(data);
     sessionStorage.setItem("formData", JSON.stringify(data));
     router.push("/checkout/payment/resume");
   };
 
-  const onError = (errors: any, e: any) => {
-    console.log(errors);
-  };
+  const onError = (errors: any, e: any) => {};
 
   return (
     <>
@@ -223,9 +220,16 @@ export default function InformationForms() {
                   item
                   style={{
                     display: "flex",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                     alignItems: "center",
                   }}>
+                  <Button
+                    variant="contained"
+                    onClick={() => router.push("/checkout")}
+                    size="large"
+                    sx={{ borderRadius: 8 }}>
+                    TILBAGE
+                  </Button>
                   <Button
                     variant="contained"
                     size="large"

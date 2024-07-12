@@ -5,11 +5,9 @@ import { ReactElement } from "react";
 
 export default function Custom() {
   return (
-    <>
-      <QuestionListProvider>
-        <CustomContent />
-      </QuestionListProvider>
-    </>
+    <QuestionListProvider>
+      <CustomContent />
+    </QuestionListProvider>
   );
 }
 

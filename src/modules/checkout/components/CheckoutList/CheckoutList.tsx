@@ -7,10 +7,12 @@ import {
   ListItem,
   ListItemText,
   ListSubheader,
+  Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useContext, useState } from "react";
 import DialogQuestions from "../dialogQuestions/DialogQuestions";
+import ShowQuestionsButton from "@/components/showQuestionsButton/ShowQuestionsButton";
 
 export function CheckoutList() {
   const { ordres, removeFromCart, totalPrice } = useContext(CartContext);
@@ -34,48 +36,52 @@ export function CheckoutList() {
   return (
     <Grid
       container
-      spacing={12}
+      justifyContent={"space-between"}
+      alignItems={"center"}
       direction={"column"}
-      justifyContent={"center"}
-      alignContent={"center"}
-      sx={{ marginTop: 20 }}>
-      <List
-        sx={{ width: "100%", maxWidth: 500, bgcolor: "#FF6F3A" }}
-        subheader={
-          <>
-            <ListSubheader sx={{ bgcolor: "#FF6F3A", fontWeight: "bold" }}>
-              Din indkøbskurv
-            </ListSubheader>
-          </>
-        }>
+      paddingY={6}
+      borderRadius={8}
+      marginTop={14}
+      marginBottom={10}
+      sx={{ backgroundColor: "#FF8911", width: "60%", mx: "auto" }}>
+      <Grid item marginBottom={6}>
+        <Typography variant="h6" fontWeight="bold">
+          Dine indkøbskurv
+        </Typography>
+      </Grid>
+      <Grid item sx={{ width: "80%" }}>
         {ordres.map((item) => (
-          <>
-            <>
-              <ListItem key={item.id}>
-                <ListItemText
-                  primary={item.name}
-                  secondary={item.price + " kr"}></ListItemText>
+          // eslint-disable-next-line react/jsx-key
+          <List>
+            <ListItem key={item.id}>
+              <Grid container justifyContent={"space-between"}>
+                <Grid item>
+                  <ListItemText
+                    primary={item.name}
+                    secondary={item.price + " kr"}></ListItemText>
+                </Grid>
+
                 {item.price === 75 && (
-                  <Button
-                    variant="contained"
-                    color="info"
-                    onClick={() => handleClickOpen(item)}
-                    sx={{ marginRight: 2 }}>
-                    Dine spørgsmål
-                  </Button>
+                  <Grid item marginRight={10}>
+                    <ShowQuestionsButton
+                      text="Dine spørgsmål"
+                      onClick={() => handleClickOpen(item)}
+                    />
+                  </Grid>
                 )}
-                <Button
-                  variant="contained"
-                  color="success"
-                  onClick={() => removeFromCart(item)}>
-                  Slet
-                </Button>
-              </ListItem>
-              <Divider variant="middle" />
-            </>
-          </>
+                <Grid item>
+                  <ShowQuestionsButton
+                    text="Slet"
+                    onClick={() => removeFromCart(item)}
+                  />
+                </Grid>
+              </Grid>
+            </ListItem>
+            <Divider variant="middle" />
+          </List>
         ))}
-      </List>
+      </Grid>
+
       {selectedItem && (
         <DialogQuestions
           open={open}
@@ -83,21 +89,21 @@ export function CheckoutList() {
           onClose={handleClose}
         />
       )}
-      <List sx={{ width: "100%", maxWidth: 500, bgcolor: "#FF6F3A" }}>
-        <ListItem>
-          <ListItemText primary={"Levering"} secondary={"40 kr"} />
-        </ListItem>
-        <ListItem>
-          <ListItemText>Subtotal: {totalPrice + 40 + " kr"}</ListItemText>
-          <Button
-            variant="contained"
-            color="success"
-            disabled={totalPrice == 0}
-            onClick={handleRouting("/checkout/payment/information")}>
-            Betal
-          </Button>
-        </ListItem>
-      </List>
+      <Grid item marginTop={6} sx={{ width: "80%" }}>
+        <List>
+          <ListItem>
+            <ListItemText primary={"Levering"} secondary={"40 kr"} />
+          </ListItem>
+          <ListItem>
+            <ListItemText>Subtotal: {totalPrice + 40 + " kr"}</ListItemText>
+            <ShowQuestionsButton
+              text="Betal"
+              disabled={totalPrice == 0}
+              onClick={handleRouting("/checkout/payment/information")}
+            />
+          </ListItem>
+        </List>
+      </Grid>
     </Grid>
   );
 }

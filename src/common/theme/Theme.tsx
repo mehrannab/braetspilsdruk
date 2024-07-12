@@ -1,5 +1,11 @@
 import { createTheme } from "@mui/material";
-import { brown, yellow } from "@mui/material/colors";
+import { Josefin_Sans } from "next/font/google";
+
+const josefin_Sans = Josefin_Sans({
+  weight: ["300", "400"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
 
 export const theme = createTheme({
   palette: {
@@ -14,7 +20,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["cursive"].join(","),
+    fontFamily: josefin_Sans.style.fontFamily,
   },
   components: {
     MuiTooltip: {

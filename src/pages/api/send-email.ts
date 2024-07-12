@@ -14,7 +14,6 @@ export default async function handler(
 
   if (req.method === "POST") {
     const { data } = req.body;
-    console.log(data);
 
     const emailData = {
       from: `abu abuili braetspilsdruk@${process.env.DOMAIN_MAILGUN}`,

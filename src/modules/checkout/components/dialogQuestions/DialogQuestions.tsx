@@ -28,8 +28,6 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export default function DialogQuestions(props: DialogQuestionsProps) {
-  console.log(props.item.questions);
-
   const handleClose = () => {
     props.onClose("");
   };

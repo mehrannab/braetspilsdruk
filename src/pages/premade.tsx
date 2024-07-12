@@ -3,11 +3,7 @@ import { PremadeContent } from "@/modules/premade";
 import { ReactElement } from "react";
 
 export default function Premade() {
-  return (
-    <>
-      <PremadeContent />
-    </>
-  );
+  return <PremadeContent />;
 }
 
 Premade.getLayout = function getLayout(page: ReactElement) {
